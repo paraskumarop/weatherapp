@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate,Link } from "react-router-dom";
 
 const Table = ({ data, setData }) => {
   const navigate = useNavigate();
@@ -130,8 +130,9 @@ const Table = ({ data, setData }) => {
                       className="list-none"
                       onClick={(e) => fetchWeather(e)}
                     >
-                      {" "}
+                    <Link to={`./weather/${city.ascii_name}`}>
                       {city.ascii_name}{" "}
+                    </Link>
                     </button>{" "}
                   </td>
                   <td className="text-center m-2 border-white border  p-2">
